@@ -21,4 +21,3 @@ const getDadJoke = async () => {
 };
 
 button.addEventListener("click", addNewJoke);
-Soy Luis Sandoval y cambié esto en una branch.
