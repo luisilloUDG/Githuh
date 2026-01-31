@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Github</title>
-<link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
-  </head>
+const jokes = document.querySelector("#jokes");
+const button = document.querySelector("button");
 
-  <body>
-    <h1>Luis Alberto Sandoval</h1>
-    <h2>Click to get new jokes!</h2>
-    <button>Click me!</button>
-    <ul id="jokes"></ul>
-  </body>
-</html>
+const addNewJoke = async () => {
+  const jokeText = await getDadJoke();
+  const newLI = document.createElement("LI");
+  newLI.append(jokeText);
+  jokes.append(newLI);
+};
+
+const getDadJoke = async () => {
+  try {
+    const res = await fetch("https://icanhazdadjoke.com/", {
+      headers: { Accept: "application/json" }
+    });
+    const data = await res.json();
+    return data.joke;
+  } catch (e) {
+    return "NO JOKES AVAILABLE! SORRY :(";
+  }
+};
+
+button.addEventListener("click", addNewJoke);
+Soy Luis Sandoval y cambié esto en una branch.
