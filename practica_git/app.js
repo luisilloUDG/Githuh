@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <h1>Luis alberto sandoval jimenez</h1>
+    <h1></h1>
     <h2>Click to get new jokes!</h2>
     <button>Click me!</button>
     <ul id="jokes"></ul>
